@@ -11,9 +11,7 @@ const   Body = () => {
   const RestaurantCardDiscount = withDiscount(RestaurantCard);
   console.log(listOfRestaurant);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+ 
 
   const fetchData = async () => {
     const response = await fetch(
@@ -37,6 +35,10 @@ const   Body = () => {
         Looks like you're offline!! Please check your internet connection;
       </h1>
     );
+
+    useEffect(() => {
+      fetchData();
+    }, []);
 
   return listOfRestaurant.length === 0 ? (
     <Shimmer />

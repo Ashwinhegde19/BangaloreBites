@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "App.js",
   "type": "module",
+"proxy": "https://www.swiggy.com",
+
   "scripts": {
     "start": "parcel index.html"
   },
