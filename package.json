@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "App.js",
   "type": "module",
-"proxy": "https://www.swiggy.com",
-
+  "proxy": "https://www.swiggy.com",
   "scripts": {
     "start": "parcel index.html"
   },
@@ -19,6 +18,9 @@
     "tailwindcss": "^3.4.10"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "cross-fetch": "^4.0.0",
+    "express": "^4.21.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1"

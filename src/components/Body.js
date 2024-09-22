@@ -4,6 +4,8 @@ import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+const cors = require('cors');
+const fetch = require('cross-fetch')
 
 const   Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -15,9 +17,11 @@ const   Body = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await response.json();
+    console.log(json);
+    
     console.log(
       json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
