@@ -11,6 +11,8 @@ import RestaurantMenu from "./components/RestaurantMenu"
 import Grocery from "./components/Grocery";
 import UserContext from "./utils/UserContext"
 import { useState } from "react";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 
 const Grocery = lazy(() => import("./components/Grocery"))  
@@ -18,12 +20,14 @@ const Grocery = lazy(() => import("./components/Grocery"))
 const AppLayout = () => {
   const [userName, setuserName] = useState("ashwin");
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser : userName, setuserName}}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
