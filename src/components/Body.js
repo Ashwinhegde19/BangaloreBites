@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState , useContext} from "react";
 import RestaurantCard, { withDiscount } from "./RestaurantCard";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const cors = require('cors');
 const fetch = require('cross-fetch')
 
@@ -44,6 +45,8 @@ const   Body = () => {
       fetchData();
     }, []);
 
+    const {loggedInUser, setuserName} = useContext(UserContext);
+
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
@@ -70,6 +73,14 @@ const   Body = () => {
           >
             Search
           </button>
+
+          <label> UserName : </label>
+          <input className="border border-black p-1"
+          value={loggedInUser}
+          onChange={(e) => {
+            setuserName(e.target.value);
+          }}
+          />
         </div>
         <div className="p-4 m-4">
           <button

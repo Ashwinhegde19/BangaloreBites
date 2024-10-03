@@ -9,14 +9,16 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu"
 import Grocery from "./components/Grocery";
-import UserContext from "./utils/UserContext";
+import UserContext from "./utils/UserContext"
+import { useState } from "react";
 
 
 const Grocery = lazy(() => import("./components/Grocery"))  
 
 const AppLayout = () => {
+  const [userName, setuserName] = useState("ashwin");
   return (
-    <UserContext.Provider value={{loggedInUser: "default"}}>
+    <UserContext.Provider value={{loggedInUser : userName, setuserName}}>
     <div className="app">
       <Header />
       <Outlet />
