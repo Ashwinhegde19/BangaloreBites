@@ -9,16 +9,19 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu"
 import Grocery from "./components/Grocery";
+import UserContext from "./utils/UserContext";
 
 
 const Grocery = lazy(() => import("./components/Grocery"))  
 
 const AppLayout = () => {
   return (
+    <UserContext.Provider value={{loggedInUser: "default"}}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
+    </UserContext.Provider>
   );
 };
 
