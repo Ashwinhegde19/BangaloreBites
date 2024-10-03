@@ -39,7 +39,10 @@ const cartItems = useSelector((store) => store.cart.items)
             <li className="p-1">
               <Link to="/grocery">Grocery</Link>
             </li>
-            <li className="p-1">Cart{cartItems.length}</li>
+            <li className="p-1 font-bold">
+            <Link to="/cart">Cart- {cartItems.length} items</Link>
+              
+              </li>
             <button className="login" 
             onClick={() => {
               BtnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login")

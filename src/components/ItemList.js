@@ -19,6 +19,7 @@ const ItemList = ({ items }) => {
           {/* Left section for text */}
           <div className="flex-1">
             <h3 className="text-xl font-bold text-gray-800">{item.card.info.name}</h3>
+            
             <p className="text-green-600 text-lg font-semibold mt-2">
               ₹{item.card.info.defaultPrice / 100 || item.card.info.finalPrice / 100 || item.card.info.price / 100}
             </p>
